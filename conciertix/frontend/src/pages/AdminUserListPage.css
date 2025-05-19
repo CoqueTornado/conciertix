@@ -1,0 +1,79 @@
+.admin-user-list-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.admin-user-list-page h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.admin-user-list-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-user-list-page th,
+.admin-user-list-page td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.admin-user-list-page th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  color: #555;
+}
+
+.admin-user-list-page tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.admin-user-list-page tr:hover {
+  background-color: #f1f1f1;
+}
+
+.admin-user-list-page select {
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 100px;
+}
+
+.admin-user-list-page button {
+  padding: 8px 15px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.admin-user-list-page button:hover {
+  opacity: 0.9;
+}
+
+.admin-user-list-page .pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-user-list-page .pagination-controls button {
+  margin: 0 10px;
+  background-color: #007bff;
+  color: white;
+}
+
+.admin-user-list-page .pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.admin-user-list-page .pagination-controls span {
+  margin: 0 10px;
+}

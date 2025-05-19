@@ -1,0 +1,53 @@
+/* Styles for Admin Edit Artist Page */
+.admin-edit-artist-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-edit-artist-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.admin-edit-artist-page .form-error,
+.admin-edit-artist-page .error-message { /* General error for page-level errors */
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.admin-edit-artist-page .form-success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Styles for loading state */
+.admin-edit-artist-page p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Re-use AdminArtistForm styles if they are not globally available */
+/* If AdminArtistForm.css is created and imported in AdminArtistForm.jsx, these might not be needed here */
+/* Or if styles from AdminCreateArtistPage.css are sufficiently general and imported in App.css or index.css */
+
+/* .admin-artist-form .form-group { ... } */
+/* .admin-artist-form label { ... } */
+/* .admin-artist-form input[type="text"], .admin-artist-form textarea { ... } */
+/* .admin-artist-form .error-message { ... } */
+/* .admin-artist-form button[type="submit"] { ... } */

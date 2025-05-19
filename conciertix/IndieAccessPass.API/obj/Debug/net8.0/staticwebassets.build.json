@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "OW5amBaF8wtRgwQwhbNtXxBmHFi6vvWLi/qu1ZCFXQY=",
+  "Source": "IndieAccessPass.API",
+  "BasePath": "_content/IndieAccessPass.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

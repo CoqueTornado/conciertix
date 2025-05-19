@@ -1,0 +1,88 @@
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+.admin-header {
+  background-color: #2c3e50; /* Dark blue-grey */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.admin-user-info {
+  display: flex;
+  align-items: center;
+}
+
+.admin-user-info span {
+  margin-right: 1rem;
+}
+
+.logout-button {
+  background-color: #e74c3c; /* Red */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.logout-button:hover {
+  background-color: #c0392b; /* Darker red */
+}
+
+.admin-main-content {
+  display: flex;
+  flex-grow: 1;
+}
+
+.admin-sidebar {
+  width: 250px;
+  background-color: #34495e; /* Slightly lighter blue-grey */
+  color: white;
+  padding: 1.5rem 1rem;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.admin-sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-sidebar nav li {
+  margin-bottom: 1rem;
+}
+
+.admin-sidebar nav a {
+  color: #ecf0f1; /* Light grey */
+  text-decoration: none;
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.admin-sidebar nav a:hover,
+.admin-sidebar nav a.active { /* Assuming you might add active class logic later */
+  background-color: #2c3e50; /* Darker background for hover/active */
+  color: white;
+}
+
+.admin-page-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #ecf0f1; /* Light grey background for content area */
+}

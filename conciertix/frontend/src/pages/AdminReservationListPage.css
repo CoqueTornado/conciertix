@@ -1,0 +1,130 @@
+.admin-reservation-list-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.admin-reservation-list-page h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.filters-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.filters-container input[type="text"],
+.filters-container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.reservations-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reservations-table th,
+.reservations-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.reservations-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #555;
+}
+
+.reservations-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.reservations-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.reservations-table .cancel-button,
+.reservations-table .placeholder-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.reservations-table .cancel-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.reservations-table .cancel-button:hover {
+  background-color: #c82333;
+}
+
+.reservations-table .cancel-button:disabled {
+  background-color: #f8d7da;
+  cursor: not-allowed;
+}
+
+.reservations-table .placeholder-button {
+  background-color: #6c757d;
+  color: white;
+  cursor: not-allowed;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  color: #6c757d;
+}
+
+.pagination-controls span {
+  font-size: 14px;
+  color: #333;
+}
+
+.error-message {
+  color: #D8000C;
+  background-color: #FFD2D2;
+  border: 1px solid #D8000C;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.success-message {
+  color: #270;
+  background-color: #DFF2BF;
+  border: 1px solid #4F8A10;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}

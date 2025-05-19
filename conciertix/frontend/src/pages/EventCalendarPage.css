@@ -1,0 +1,340 @@
+/* frontend/src/pages/EventCalendarPage.css */
+
+.event-calendar-page {
+  padding: 25px;
+  background-color: #f4f7f6; /* A very light, almost white, cool grey */
+  min-height: calc(100vh - 70px); /* Adjust based on actual nav/footer height */
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Modern sans-serif font */
+  color: #333;
+}
+
+.event-calendar-page .page-title {
+  color: #2c3e50; /* Dark blue-grey for titles */
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.calendar-section-title {
+  font-size: 1.8rem;
+  color: #34495e; /* Slightly lighter blue-grey */
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #007bff; /* Primary color accent */
+  display: inline-block;
+}
+
+
+.filters-search-container {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  gap: 20px;
+  align-items: flex-end; /* Align items to the bottom for a neat look */
+}
+
+.filters-search-container .form-group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow form groups to grow */
+  min-width: 180px; /* Minimum width for inputs */
+}
+
+.filters-search-container label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.filters-search-container input[type="text"],
+.filters-search-container input[type="date"],
+.filters-search-container select {
+  padding: 12px 15px;
+  border: 1px solid #d1d9e6; /* Softer border color */
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fdfdfd;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filters-search-container input[type="text"]:focus,
+.filters-search-container input[type="date"]:focus,
+.filters-search-container select:focus {
+  outline: none;
+  border-color: #007bff; /* Primary color focus */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+.filters-search-container button.filter-button {
+  padding: 12px 25px;
+  background-color: #007bff; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  height: fit-content; /* Align with input height */
+}
+
+.filters-search-container button.filter-button:hover {
+  background-color: #0056b3; /* Darker shade */
+  transform: translateY(-1px);
+}
+
+.calendar-and-events-layout {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap; /* Wrap for smaller screens */
+}
+
+.calendar-container-wrapper {
+  flex: 1 1 450px; /* Calendar takes up space, but can shrink */
+  min-width: 320px;
+}
+
+.calendar-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.rbc-calendar {
+  min-height: 550px; /* Good default height */
+  font-family: 'Roboto', sans-serif;
+}
+
+.rbc-toolbar button {
+  color: #ffffff !important;
+  background-color: #007bff !important;
+  border: none !important;
+  padding: 8px 15px !important;
+  border-radius: 5px !important;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.rbc-toolbar button:hover,
+.rbc-toolbar button:focus {
+  background-color: #0056b3 !important;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.rbc-event, .rbc-day-slot .rbc-background-event {
+  background-color: #28a745 !important; /* Vibrant green for events */
+  border-radius: 4px !important;
+  color: #fff !important;
+  padding: 3px 6px !important;
+  font-size: 0.8em;
+  border: none !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  opacity: 0.85;
+}
+.rbc-event:hover, .rbc-day-slot .rbc-background-event:hover {
+  opacity: 1;
+}
+
+
+.rbc-selected-cell {
+  background-color: #e6f7ff !important; /* Light blue for selected day */
+}
+
+.rbc-today {
+  background-color: #fff3cd !important; /* Light yellow for today */
+}
+
+.event-list-container {
+  flex: 2 1 600px; /* Event list takes more space and can grow */
+  min-width: 320px;
+}
+
+.event-list-container .section-title { /* Re-using calendar-section-title style */
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #28a745; /* Green accent for event list */
+  display: inline-block;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 25px;
+}
+
+.event-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.event-card-image-placeholder { /* Optional: if you add images */
+  height: 150px;
+  background-color: #e9ecef;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #adb5bd;
+  font-size: 1.2rem;
+  margin: -20px -20px 15px -20px; /* Extend to card edges */
+}
+
+.event-card h4 {
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.event-card .event-date,
+.event-card .event-time {
+  font-size: 0.9rem;
+  color: #e74c3c; /* A distinct color for date/time */
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.event-card .event-date i,
+.event-card .event-time i {
+  margin-right: 6px;
+}
+
+
+.event-card p {
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1; /* Allow text to take available space before button */
+}
+
+.event-card strong {
+  color: #333;
+  font-weight: 500;
+}
+
+.event-card .event-genre {
+  display: inline-block;
+  background-color: #e6f7ff;
+  color: #007bff;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.event-card .event-details-link {
+  display: inline-block;
+  margin-top: auto; /* Pushes button to the bottom */
+  padding: 10px 18px;
+  background-color: #28a745; /* Green to match event markers */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.event-card .event-details-link:hover {
+  background-color: #218838; /* Darker green */
+}
+
+.loading-message, .error-message, .no-events-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  padding: 40px;
+}
+.error-message {
+  color: #d9534f; /* Bootstrap danger color */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Tablet and below */
+  .calendar-and-events-layout {
+    flex-direction: column;
+  }
+  .calendar-container-wrapper, .event-list-container {
+    flex-basis: auto; /* Reset basis for stacked layout */
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .event-calendar-page {
+    padding: 15px;
+  }
+  .event-calendar-page .page-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+  .filters-search-container {
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch; /* Stretch items to full width */
+  }
+  .filters-search-container .form-group,
+  .filters-search-container input,
+  .filters-search-container select,
+  .filters-search-container button.filter-button {
+    width: 100%;
+    min-width: 0;
+  }
+  .filters-search-container button.filter-button {
+    margin-top: 10px; /* Add some space when stacked */
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+  .event-card h4 {
+    font-size: 1.25rem;
+  }
+  .rbc-toolbar .rbc-toolbar-label {
+    font-size: 1.3em;
+  }
+  .rbc-toolbar button {
+    padding: 6px 10px !important;
+    font-size: 0.9em;
+  }
+}
+
+/* FontAwesome or other icon library integration (assuming it's available) */
+/* Example: .fa { display: inline-block; font: normal normal normal 14px/1 FontAwesome; ... } */
+/* You might need to add an icon library to your project for these to work */
+/* For example, for date/time icons:
+   <i className="fa fa-calendar-alt"></i>
+   <i className="fa fa-clock"></i>
+*/

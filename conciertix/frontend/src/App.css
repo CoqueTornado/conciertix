@@ -1,0 +1,552 @@
+/* General App Structure & Theming */
+body {
+  /* font-family is now in index.css */
+  margin: 0; /* Reset margin */
+  /* background-color is now in index.css */
+  /* color is now in index.css */
+  line-height: 1.6; /* Improved readability */
+}
+
+.App {
+  /* max-width and margin:auto are handled by #root and body in index.css */
+  padding: 0; /* Remove padding, handle spacing within components or pages */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure App takes at least full viewport height */
+}
+
+/* Container for main content to center it and provide max-width */
+.main-content-container {
+  width: 100%;
+  max-width: 1280px; /* Max width for content */
+  margin: 0 auto; /* Center the container */
+  padding: 20px;    /* Padding around the content area */
+  flex-grow: 1;     /* Allow this container to grow and push footer down */
+}
+
+
+/* Typography - h1 is styled in index.css, this can be for page specific titles */
+.page-title { /* This class was already present, let's refine it */
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 40px; /* Increased margin */
+  font-size: 2.2rem;
+  font-weight: 600; /* Slightly bolder */
+}
+
+/* Filters and Search Section - Modernized */
+.filters-and-search-container { /* This class was already present */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Consistent gap */
+  margin-bottom: 40px; /* Increased margin */
+  padding: 24px; /* Slightly more padding */
+  background-color: #ffffff;
+  border-radius: 12px; /* More pronounced rounding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer, more modern shadow */
+}
+
+.filter-controls { /* This class was already present */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Adjusted gap */
+}
+
+.filter-group { /* This class was already present */
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Space between label and input */
+  flex: 1 1 200px; /* Base size, allows wrapping */
+}
+
+.filter-group label { /* This class was already present */
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+.filter-input,
+.search-input { /* These classes were already present */
+  padding: 10px 14px; /* Adjusted padding */
+  border: 1px solid #ced4da; /* Softer border color */
+  border-radius: 6px; /* Consistent with buttons */
+  font-size: 0.95rem;
+  background-color: #f8f9fa; /* Light background for inputs */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-input:focus,
+.search-input:focus { /* These classes were already present */
+  border-color: #007bff; /* Primary blue focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  outline: none;
+  background-color: #fff;
+}
+
+.filter-input::placeholder,
+.search-input::placeholder { /* These classes were already present */
+  color: #6c757d; /* Softer placeholder color */
+}
+
+.date-input { /* This class was already present */
+  color-scheme: light;
+  appearance: none; /* Try to remove default styling for better custom control */
+}
+
+.search-bar-container { /* This class was already present */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-input-wrapper { /* This class was already present */
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input { /* This class was already present */
+  flex-grow: 1;
+  padding-right: 35px; /* Space for the icon */
+}
+
+.search-icon { /* This class was already present */
+  position: absolute;
+  right: 10px;
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+/* Event List & Cards - Modernized */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Slightly smaller min for more flexibility */
+  gap: 24px; /* Increased gap */
+  margin-bottom: 40px;
+}
+
+.event-card {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef; /* Lighter border */
+  border-radius: 12px; /* More pronounced rounding */
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.event-card-image {
+  width: 100%;
+  height: 180px; /* Slightly reduced height */
+  object-fit: cover;
+  border-bottom: 1px solid #e9ecef; /* Separator */
+}
+
+.event-card-content {
+  padding: 16px; /* Consistent padding */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card-title {
+  font-size: 1.15rem; /* Adjusted size */
+  color: #343a40; /* Darker, more neutral color */
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.event-card-artists,
+.event-card-date,
+.event-card-venue,
+.event-card-price {
+  font-size: 0.875rem; /* Slightly smaller */
+  color: #495057; /* Softer text color */
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.event-card-artists strong,
+.event-card-date strong,
+.event-card-venue strong {
+  color: #343a40;
+}
+
+
+.event-card-price {
+  font-weight: 600;
+  color: #007bff; /* Primary blue for price */
+  font-size: 0.95rem;
+}
+
+.event-card-details-button {
+  background-color: #6c757d; /* Secondary/neutral button color */
+  color: white;
+  border: none;
+  padding: 8px 14px; /* Adjusted padding */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px; /* Consistent with other buttons */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: auto; /* Pushes button to the bottom */
+  align-self: flex-start; /* Align to start of cross axis */
+}
+
+.event-card-details-button:hover {
+  background-color: #5a6268; /* Darker shade on hover */
+}
+
+/* Pagination - Modernized */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Reduced gap */
+  margin-top: 30px;
+  padding: 10px 0; /* Remove horizontal padding, handled by container */
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  background-color: #ffffff;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  font-weight: 500;
+}
+
+.pagination button:disabled {
+  color: #adb5bd;
+  cursor: not-allowed;
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+}
+
+.pagination button:not(:disabled):hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+.pagination button.active { /* Style for current page button if applicable */
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.pagination span {
+  font-size: 0.9rem;
+  color: #495057;
+  padding: 0 8px;
+}
+
+
+/* Navbar Styles - Modernized */
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px; /* Adjusted padding */
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6; /* Lighter border */
+  /* margin-bottom: 0; Remove bottom margin, let .main-content-container handle spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04); /* Softer shadow */
+  position: sticky; /* Make navbar sticky */
+  top: 0;
+  z-index: 1000; /* Ensure it's above other content */
+  width: 100%; /* Take full width */
+}
+
+.navbar-brand a { /* Assuming you have a brand/logo link */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px; /* Add gap between links */
+}
+
+.navbar-links a,
+.auth-links a {
+  margin-right: 0; /* Remove margin-right, use gap on parent */
+  text-decoration: none;
+  color: #495057; /* Softer link color */
+  font-weight: 500;
+  padding: 8px 0; /* Add some vertical padding for easier clicking */
+  border-bottom: 2px solid transparent; /* For hover effect */
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.navbar-links a:hover,
+.auth-links a:hover,
+.navbar-links a.active, /* Style for active link */
+.auth-links a.active {
+  color: #007bff; /* Primary blue for hover/active */
+  border-bottom-color: #007bff;
+}
+
+.navbar-auth-section {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Gap between auth elements */
+}
+
+.user-menu-container {
+  position: relative;
+}
+
+.user-menu-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem; /* Adjusted size */
+  font-weight: 500;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.user-menu-trigger:hover {
+  background-color: #e9ecef; /* Light grey hover */
+  color: #007bff;
+}
+
+.dropdown-arrow {
+  margin-left: 8px;
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.user-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px); /* Add a small gap */
+  right: 0;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px; /* Slightly larger radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1010; /* Above navbar */
+  min-width: 200px; /* Increased width */
+  padding: 8px 0; /* Padding for items */
+  list-style: none; /* Remove if it's a ul/ol */
+}
+
+.user-dropdown-menu a,
+.user-dropdown-menu .logout-button-dropdown {
+  display: block;
+  padding: 10px 20px; /* More padding */
+  text-decoration: none;
+  color: #343a40;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.user-dropdown-menu a:hover,
+.user-dropdown-menu .logout-button-dropdown:hover {
+  background-color: #f8f9fa; /* Very light grey for hover */
+  color: #007bff;
+}
+
+.logout-button-dropdown {
+  font-family: inherit;
+}
+
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Consistent gap */
+}
+.auth-links .btn-login, .auth-links .btn-register {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.auth-links .btn-login {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+.auth-links .btn-login:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+.auth-links .btn-register {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+}
+.auth-links .btn-register:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) { /* Tablet and larger mobile */
+  .main-content-container {
+    padding: 20px 15px; /* Reduce horizontal padding */
+  }
+  .event-list {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+  .filters-and-search-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .main-navbar {
+    padding: 10px 15px;
+    /* Could implement a mobile menu toggle here if needed */
+  }
+  .navbar-links {
+    /* display: none; */ /* Example: Hide links for a burger menu */
+    /* Consider a mobile-first approach or a burger menu for complex navs */
+  }
+  .page-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .filters-and-search-container {
+    flex-direction: column; /* Already default, but good to be explicit */
+    align-items: stretch; /* Make children full width */
+  }
+  .filter-controls {
+    flex-direction: column; /* Stack filter groups */
+    gap: 15px;
+  }
+  .filter-group {
+    flex-basis: auto; /* Reset flex-basis */
+  }
+  .search-bar-container {
+    min-width: auto; /* Reset min-width */
+  }
+  .event-list {
+    grid-template-columns: 1fr; /* Stack cards */
+    gap: 20px;
+  }
+  .event-card-image {
+    height: 160px;
+  }
+  .pagination {
+    flex-wrap: wrap; /* Allow pagination buttons to wrap */
+    gap: 6px;
+  }
+  .pagination button {
+    padding: 6px 10px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) { /* Smaller mobile */
+  .main-content-container {
+    padding: 15px 10px;
+  }
+  .page-title {
+    font-size: 1.6rem;
+  }
+  .filters-and-search-container {
+    padding: 15px;
+    gap: 15px;
+  }
+  .filter-input, .search-input {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  .event-card-title {
+    font-size: 1.05rem;
+  }
+  .event-card-artists,
+  .event-card-date,
+  .event-card-venue,
+  .event-card-price {
+    font-size: 0.825rem;
+  }
+  .event-card-details-button {
+    padding: 7px 12px;
+    font-size: 0.825rem;
+  }
+}
+
+
+/* Loading, Error, No Events Messages */
+.loading-message,
+.error-message,
+.no-events-message {
+  text-align: center;
+  padding: 25px 20px; /* Increased padding */
+  margin: 25px auto; /* Centered with auto margins */
+  border-radius: 8px; /* Consistent rounding */
+  font-size: 1.05rem; /* Slightly larger */
+  max-width: 600px; /* Limit width for better readability */
+  border-width: 1px;
+  border-style: solid;
+}
+
+.loading-message {
+  color: #007bff;
+  background-color: #e7f3ff; /* Light blue background */
+  border-color: #b3d7ff; /* Softer blue border */
+}
+
+.error-message {
+  color: #721c24; /* Darker red for text */
+  background-color: #f8d7da; /* Light red background */
+  border-color: #f5c6cb; /* Softer red border */
+}
+
+.no-events-message {
+  color: #383d41; /* Dark grey text */
+  background-color: #e2e3e5; /* Light grey background */
+  border-color: #d6d8db; /* Softer grey border */
+}
+
+/* Visually hidden class for accessibility */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+/* Cleanup old/unused styles if any - this diff removes them by not including them */
+/* Removed .filters-and-search (replaced by .filters-and-search-container logic) */
+/* Removed .filters (replaced by .filter-controls logic) */
+/* Removed .search-bar (replaced by .search-bar-container logic) */
+/* Removed .event-card-placeholder styles as they seem to be for a pre-component state */
+/* Removed .home-page.container as .main-content-container is more generic */
+/* Removed some specific media query blocks for .filters-and-search as new structure handles it */
